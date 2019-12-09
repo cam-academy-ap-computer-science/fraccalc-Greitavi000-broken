@@ -5,21 +5,25 @@ public class FracCalc {
     public static void main(String[] args)  {
     	// TODO: Read the input from the user and call produceAnswer with an equation
     	Scanner userInput = new Scanner(System.in);	
-        String problem = userInput.next();
+        String problem = userInput.nextLine();
     	produceAnswer(problem);
     }
    
     public static String produceAnswer(String input){ 
         // TODO: Implement this function to produce the solution to the input
-    	
-    	
+    int undreline= input.indexOf("_");
+    String s1 = input.substring(0 , undreline );
+    int slash= input.indexOf("/");
+    String s2 = input.substring(undreline, slash);
+    int firstSpace= input.indexOf(" ");
+    String s3 = input.substring(slash, firstSpace);
+    System.out.print(s3);
    
-        
+   
+    
+    
         return "";
     }
-
-    
-    
 }
 
 
