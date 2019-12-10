@@ -6,23 +6,23 @@ public class FracCalc {
     	// TODO: Read the input from the user and call produceAnswer with an equation
     	Scanner userInput = new Scanner(System.in);	
         String problem = userInput.nextLine();
-    	produceAnswer(problem);
+    	while (!problem.contentEquals("quit")) {
+        String answer = produceAnswer(problem);
+    	System.out.print("Here is your answer: "+ answer);
+    	problem = userInput.nextLine();
+    	}
+    	
     }
    
     public static String produceAnswer(String input){ 
         // TODO: Implement this function to produce the solution to the input
-    int undreline= input.indexOf("_");
-    String s1 = input.substring(0 , undreline );
-    int slash= input.indexOf("/");
-    String s2 = input.substring(undreline, slash);
+    
+   
     int firstSpace= input.indexOf(" ");
-    String s3 = input.substring(slash, firstSpace);
-    System.out.print(s3);
-   
-   
-    
-    
-        return "";
+    String firstOperand= input.substring(0 , firstSpace );
+    int secondSpace= input.indexOf(" ")+2;
+    String secondOperand = input.substring(secondSpace+1, input.length());
+    return secondOperand ;
     }
 }
 
@@ -37,3 +37,5 @@ public class FracCalc {
 //        
 // The function should return the result of the fraction after it has been calculated
 //      e.g. return ==> "1_1/4"  pg.167
+
+
