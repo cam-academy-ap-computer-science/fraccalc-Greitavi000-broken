@@ -22,11 +22,11 @@ public class FracCalc {
     String secondOperand = input.substring(secondSpace+1, input.length());
     int space= secondOperand.indexOf(" ");
     int line= secondOperand.indexOf("_");
-    String whole = secondOperand.substring(space, line);
+    String whole = secondOperand.substring(0, line);
     int dush= secondOperand.indexOf("/");
-    String numerator = secondOperand.substring(line, dush);
-    String denominator = secondOperand.substring(dush, secondOperand.length());
-    System.out.println("whole: "+ whole+"numerator: "+ numerator+"denominator: "+ denominator);
+    String numerator = secondOperand.substring(line+1, dush);
+    String denominator = secondOperand.substring(dush+1, secondOperand.length());
+    System.out.println("whole:"+whole+ " numerator:"+ numerator +" denominator:"+ denominator);
     return secondOperand ;
     }
 }
